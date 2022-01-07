@@ -22,22 +22,28 @@ const Nav = () => {
 
   return (
     <Box>
-      <Stack alignItems={"center"} direction={"row"} justifyContent={"space-between"} px={8} py={2}>
-        <Image alt="Aerolab Icon" src={"/aerolab-logo.svg"} width={"30px"} />
+      <Stack
+        alignItems={"center"}
+        direction={"row"}
+        fontSize={"xl"}
+        justifyContent={"space-between"}
+        px={8}
+        py={4}
+      >
+        <Image alt="Aerolab Icon" src={"/aerolab-logo.svg"} width={"40px"} />
         <Stack alignItems={"center"} color={"blackAlpha.700"} direction={"row"}>
           <Text>{!user ? "Cargando" : user.name}</Text>
           <HStack
-            alignItems={"flex-end"}
             bg={"blackAlpha.200"}
-            borderRadius={15}
+            borderRadius={20}
             cursor={"pointer"}
-            px={2}
-            py={1}
+            px={3}
+            py={2}
             onClick={handlepoints}
           >
             {" "}
             <Text>{!user ? "Cargando" : user.points}</Text>
-            <Image alt="Coin" src={"/coin.svg"} width={5} />
+            <Image alt="Coin" boxSize="30px" objectPosition={"0px 2px"} src={"/coin.svg"} />
           </HStack>
         </Stack>
       </Stack>

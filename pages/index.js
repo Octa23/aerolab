@@ -27,13 +27,13 @@ export default function Home() {
             fontSize={{base: "3xl", lg: "5xl"}}
             fontWeight={700}
             position={"absolute"}
-            px={{base: 10, lg: 40}}
+            px={{base: 5, lg: 40}}
             top={{base: "320px", lg: "270px"}}
           >
             Electronics
           </Text>
         </Box>
-        <Box bgColor={"rgb(250,250,250)"} px={{base: 5, lg: 40}} py={10}>
+        <Box bgColor={"rgb(250,250,250)"} px={{base: 5, xl: 40}} py={10}>
           <ProductList />
         </Box>
       </UserProvider>

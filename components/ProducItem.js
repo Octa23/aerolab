@@ -47,7 +47,7 @@ const ProductItem = ({item}) => {
             </Stack>
             <Button
               borderRadius={99}
-              fontSize={"xl"}
+              fontSize={{base: "md", lg: "lg"}}
               height={"50px"}
               width={"85%"}
               onClick={handleredeem}
@@ -92,8 +92,12 @@ const ProductItem = ({item}) => {
           <Image src="/coin.svg" width={5} />
         </Stack>
       )}
-      <Stack pb={5} px={7}>
-        {!hover || item.cost >= user.points ? <Divider /> : null}
+      {!hover || item.cost >= user.points ? (
+        <Box h={0} px={5}>
+          <Divider />
+        </Box>
+      ) : null}
+      <Stack p={5}>
         <Stack spacing={0}>
           <Text color={"blackAlpha.600"}>{item.category}</Text>
           <Text>{item.name}</Text>

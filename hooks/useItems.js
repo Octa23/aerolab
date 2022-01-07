@@ -22,10 +22,20 @@ const useItems = () => {
     });
   }, []);
 
-  const List = () => {
+  const List = ({sort = null}) => {
+    const sortedItems = [].concat(items);
+
+    sortedItems.sort((item1, item2) =>
+      sort === 1 && item1.cost < item2.cost
+        ? -1
+        : sort === 2 && item1.cost > item2.cost
+        ? -1
+        : null,
+    );
+
     return (
-      items &&
-      items.map((item, index) =>
+      sortedItems &&
+      sortedItems.map((item, index) =>
         index + 1 <= Totalitems / 2 && page === 1 ? (
           <ProductItem key={item._id} item={item} />
         ) : (

@@ -1,9 +1,13 @@
 import {Button, Divider, Image, SimpleGrid, Stack, Text} from "@chakra-ui/react";
+import {useState} from "react";
 
 import useItems from "../hooks/useItems";
 
+import styles from "./styles/Button.module.css";
+
 const ProductList = () => {
   const {List, Totalitems, page, handlepage} = useItems();
+  const [sort, setSort] = useState(null);
 
   return (
     <>
@@ -14,13 +18,21 @@ const ProductList = () => {
           </Text>
           <Divider borderColor={"blackAlpha.300"} height={6} orientation="vertical" />
           <Text color={"blackAlpha.500"}>Sort by:</Text>
-          <Button bg={"rgb(21,219,255)"} borderRadius={15} color={"white"} height={9}>
+          <Button
+            borderRadius={15}
+            // className={styles.error}
+            className={styles.active}
+            classname={styles.active}
+            color={"blackAlpha.500"}
+            height={9}
+            onClick={() => setSort(0)}
+          >
             Most Recent
           </Button>
-          <Button borderRadius={15} color={"blackAlpha.500"} height={9}>
+          <Button borderRadius={15} color={"blackAlpha.500"} height={9} onClick={() => setSort(1)}>
             Lower price
           </Button>
-          <Button borderRadius={15} color={"blackAlpha.500"} height={9}>
+          <Button borderRadius={15} color={"blackAlpha.500"} height={9} onClick={() => setSort(2)}>
             Highest price
           </Button>
         </Stack>
@@ -33,8 +45,8 @@ const ProductList = () => {
         </Stack>
       </Stack>
       <Divider mb={8} />
-      <SimpleGrid columns={{base: 2, lg: 4}} spacing={{base: 2, lg: 5}}>
-        <List />
+      <SimpleGrid columns={{base: 2, lg: 4}} spacing={4}>
+        <List sort={sort} />
       </SimpleGrid>
       <Stack direction={"row"} pb={4} pt={10}>
         <Stack
