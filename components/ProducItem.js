@@ -1,4 +1,4 @@
-import {Box, Button, Center, Divider, Image, Stack, Text} from "@chakra-ui/react";
+import {Box, Button, Divider, Image, Stack, Text} from "@chakra-ui/react";
 import {useState, useContext} from "react";
 
 import UserContext from "../context/UserContext";
@@ -22,9 +22,11 @@ const ProductItem = ({item}) => {
 
   return (
     <Box
+      _hover={{boxShadow: "2xl", transform: "translateY(-10px)"}}
       bgColor={"white"}
-      boxShadow={"md"}
+      boxShadow={"sm"}
       position={"relative"}
+      transition={"all 0.5s"}
       onMouseEnter={() => {
         sethover(true);
       }}
@@ -57,7 +59,7 @@ const ProductItem = ({item}) => {
           </Stack>
         </Box>
       )}
-      <Image margin={"auto"} p={2} src={item.img.url} width={"100%"} />
+      <Image margin={"auto"} p={2} src={item.img.hdUrl} width={"100%"} />
       {user && item.cost <= user.points && !hover ? (
         <Image
           cursor={"pointer"}

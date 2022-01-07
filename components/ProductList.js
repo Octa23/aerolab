@@ -3,8 +3,6 @@ import {useState} from "react";
 
 import useItems from "../hooks/useItems";
 
-import styles from "./styles/Button.module.css";
-
 const ProductList = () => {
   const {List, Totalitems, page, handlepage} = useItems();
   const [sort, setSort] = useState(null);
@@ -18,15 +16,7 @@ const ProductList = () => {
           </Text>
           <Divider borderColor={"blackAlpha.300"} height={6} orientation="vertical" />
           <Text color={"blackAlpha.500"}>Sort by:</Text>
-          <Button
-            borderRadius={15}
-            // className={styles.error}
-            className={styles.active}
-            classname={styles.active}
-            color={"blackAlpha.500"}
-            height={9}
-            onClick={() => setSort(0)}
-          >
+          <Button borderRadius={15} color={"blackAlpha.500"} height={9} onClick={() => setSort(0)}>
             Most Recent
           </Button>
           <Button borderRadius={15} color={"blackAlpha.500"} height={9} onClick={() => setSort(1)}>

@@ -11,7 +11,6 @@ const useUser = () => {
   useEffect(() => {
     get(url).then((response) => {
       setUser(response);
-      console.log("renderizado");
     });
   }, []);
 
