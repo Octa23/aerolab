@@ -26,7 +26,7 @@ const ProductItem = ({item}) => {
       bgColor={"white"}
       boxShadow={"sm"}
       position={"relative"}
-      transition={"all 0.5s"}
+      transition={"all .5s"}
       onMouseEnter={() => {
         sethover(true);
       }}
@@ -35,7 +35,7 @@ const ProductItem = ({item}) => {
       }}
     >
       {hover && item.cost <= user.points && (
-        <Box backgroundColor="rgba(21,219,255, .8)" h={"100%"} position={"absolute"} width={"100%"}>
+        <Box backgroundColor="primary800" h={"100%"} position={"absolute"} width={"100%"}>
           <Stack alignItems={"center"} position={"relative"} top={"30%"}>
             <Stack direction={"row"} fontSize={"4xl"}>
               <Text color={"white"}>{item.cost}</Text>
