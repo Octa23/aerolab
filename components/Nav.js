@@ -30,7 +30,7 @@ const Nav = () => {
         direction={"row"}
         fontSize={"xl"}
         justifyContent={"space-between"}
-        px={8}
+        px={{base: 4, md: 8}}
         py={4}
       >
         <Image alt="Aerolab Icon" src={"/aerolab-logo.svg"} width={"40px"} />

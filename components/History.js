@@ -26,7 +26,7 @@ const History = ({isOpen, onClose, data}) => {
         <DrawerBody px={2}>
           <Stack direction={"column-reverse"}>
             {data &&
-              data.reverse().map((el) => (
+              data.map((el) => (
                 <Box key={el.createDate} borderBottomWidth="1px">
                   <Stack alignItems={"center"} direction={"row"}>
                     <Image alt={el.name} src={el.img.url} width={"40%"} />
