@@ -64,7 +64,7 @@ const ProductList = () => {
       </Stack>
       <Divider mb={8} />
       <MotionBox animate={{opacity: 1, x: 0}} initial={{opacity: 0, x: -100}}>
-        <SimpleGrid animate={{x: [0, 100, 0]}} columns={{base: 2, lg: 4}} spacing={4}>
+        <SimpleGrid columns={{base: 2, lg: 4}} spacing={4}>
           <List sort={sort} />
         </SimpleGrid>
       </MotionBox>
